@@ -53,8 +53,22 @@ guessBtn.addEventListener('click', function() {
     if (guessesLeft === 0) {
       // Game over - lost
 
+      // Disable input
+      guessInput.disabled = true;
+      // Change border color
+      guessInput.style.borderColor = 'red';
+      // Set message
+      setMessage(`Game Over, YOU LOST!!! The correct number was ${winningNum}`, 'red');
     } else {
       // Game continues - answer wrong
+      
+      // Change border color
+      guessInput.style.borderColor = 'red';
+
+      // Clear Input
+      guessInput.value = '';
+      
+      setMessage(`${guess} is not  correct, ${guessesLeft} guesses left`);
     }
   }
 });
