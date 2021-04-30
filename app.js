@@ -91,7 +91,7 @@ function gameOver(won, msg) {
 
 // Get Winning Number
 function getRandomNum(min, max) {
-  console.log(Math.random());
+  return Math.floor(Math.random()*(max - min + 1) + min);
 }
 
 // Set message
@@ -99,3 +99,12 @@ function setMessage(msg, color) {
   message.style.color = 'red';
   message.textContent = msg;
 }
+
+const brad = {
+  name: 'Brad',
+  age: 30
+}
+
+console.log(brad);
+
+console.log(brad.age);
