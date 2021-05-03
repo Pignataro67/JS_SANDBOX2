@@ -1,29 +1,15 @@
-// const pat = {
-//   name: 'Pat',
-//   age: 30
-// }
+// String 
 
-// console.log(pat);
+const name1 = 'Jeff';
+const name2 = new String('Jeff');
 
-// console.log(pat.age);
+// name2.foo = 'bar';
+// console.log(name2);
 
-// Person Constructor
-function Person(name, dob) {
-  this.name = name;
-  // this.age = age;
-  this.birthday = new Date(dob);
-  this.getAge = function() {
-    const diff = Date.now() - this.birthday.getTime();
-    const ageDate = new Date(diff);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
-  }
+console.log(typeof name2);
+
+if(name2 === 'Jeff') {
+  console.log('YES');
+} else {
+  console.log('NO');
 }
-  // console.log(this);
-
-  // const pat = new Person('pat');
-  // const john = new Person('John');
-
-  // console.log(john.age);
-
-const pat = new Person('Pat', '6/7/1978');
-console.log(pat.getAge());
