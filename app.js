@@ -1,21 +1,29 @@
-const brad = {
-  name: 'Brad',
-  age: 30
-}
+// const pat = {
+//   name: 'Pat',
+//   age: 30
+// }
 
-console.log(brad);
+// console.log(pat);
 
-console.log(brad.age);
+// console.log(pat.age);
 
 // Person Constructor
-
-function Person() {
-    this.name = name;
-    this.age = age;
-    console.log(this);
+function Person(name, dob) {
+  this.name = name;
+  // this.age = age;
+  this.birthday = new Date(dob);
+  this.getAge = function() {
+    const diff = Date.now() - this.birthday.getTime();
+    const ageDate = new Date(diff);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
 }
+  // console.log(this);
 
-const brad = new Person('Brad');
-const john = new Person('John');
+  // const pat = new Person('pat');
+  // const john = new Person('John');
 
-console.log(john.age);
+  // console.log(john.age);
+
+const pat = new Person('Pat', '6/7/1978');
+console.log(pat.getAge());
