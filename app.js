@@ -13,3 +13,20 @@ if(name2 === 'Jeff') {
 } else {
   console.log('NO');
 }
+
+// Number
+const num1 = 5;
+const num2 = new number(5);
+
+// Boolean
+const bool1 = true;
+const bool2 = new Boolean(true);
+
+// Funciton
+const getSum1 = function(x, y) {
+  return x + y;
+}
+
+const getSum2 = new Function('x', 'y', 'return 1 + 1');
+
+console.log(getSum2(1, 1));
