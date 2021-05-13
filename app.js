@@ -46,8 +46,8 @@ UI.prototype.showAlert = function(message, className) {
 }
 
 // Delete Book
-UI.prototype.deleteBook(target) {
-  if(target.className === 'delete') {
+UI.prototype.deleteBook = function(target) {
+  if (target.className === 'delete') {
     target.parentElement.parentElement.remove();
   }
 }
@@ -97,6 +97,9 @@ document.getElementById('book-list').addEventListener('click', function(e) {
   const ui = new UI();
 
   ui.deleteBook(e.target);
+
+  // Show message
+  ui.showAlert('Book Removed', 'success');
 
   e.preventDefault();
 });
