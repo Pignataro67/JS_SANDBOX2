@@ -88,7 +88,15 @@ class Store {
   }
 
   static removeBook(isbn) {
-    console.log(isbn);
+    const books = Store.getBooks();
+
+    books.forEaxch(function(book) {
+      if(book.isbn === isbn) {
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem('books', JSON.stringify(books));
   }
 }
 
