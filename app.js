@@ -10,7 +10,16 @@ function getJokes(e) {
   xhr.onload = function() {
     if(this.status === 200) {
       const res = JSON.parse(this.responseText);
-      console.log(res);
+      
+      let output = '';
+
+      if(res.type === 'success') {
+        res.value.forEach(function(joke) {
+          output +=`<li>${joke.joke}</li>`
+        })
+      }else {
+        output += `<li>Something went wrong</li>`;
+      }
     }
   }
 
