@@ -1,31 +1,20 @@
-document.querySelector('.get-jokes').addEventListener('click', getJokes);
+const posts = [
+  {title: 'Post One', body: 'This is post one'},
+  {title: 'Post One', body: 'This is post one'}
+];
 
-function getJokes(e) {
-  const number = document.querySelector('input[type="number"]').value;
+function createPost(post) {
+  setTimeout(function() {
+    posts.push(post);
+  }, 2000);
+}
 
-  const xhr = new XMLHttpRequest();
 
-  xhr.open('GET', `http:api.icndb.com/jokes/random/${number}`, true);
-
-  xhr.onload = function() {
-    if(this.status === 200) {
-      const response = JSON.parse(this.responseText);
-      
-      let output = '';
-
-      if(response.type === 'success') {
-        response.value.forEach(function(joke) {
-          output += `<li>${joke.joke}</li>`
-        })
-      } else {
-        output += '<li>Something went wrong</li>';
-      }
-
-      document.querySelector('.jokes').innerHTML = output;
-    }
-  }
-
-  xhr.send();
-
-  e.preventDefault();
+function getPosts() {
+  setTimeout(function() {
+    let output = '';
+    post.forEach(function(post) {
+      output += `<li>${post.title}</li>`;
+    });
+  }, 1000);
 }
