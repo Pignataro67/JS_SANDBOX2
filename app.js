@@ -16,5 +16,10 @@ function getPosts() {
     post.forEach(function(post) {
       output += `<li>${post.title}</li>`;
     });
+    document.body.innerHTML = output;
   }, 1000);
 }
+
+createPost({title: 'Post Three', body: 'This is post three'});
+
+getPosts();
