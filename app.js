@@ -24,11 +24,11 @@ const data = {
   body: 'This is a custom post'
 };
 
-// Create Post
+Create Post
 http.post('https://jsonplaceholder.typicode.com/posts', data, function(err, post) {
   if (err) {
     console.log(err);
   } else {
-    console.log(post)
+    console.log(err);
   }
 });
