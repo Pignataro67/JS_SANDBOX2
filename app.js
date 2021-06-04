@@ -17,6 +17,13 @@ const sayHello = function() {
   return 'Hello';
 }
 
-const sayHello = () => 'Hello';
+// Return object, need ()
+const sayHello = () => ({ msg: 'Hello'}); 
 
-console.log(sayHello());  
+// single param does not ()
+const sayHello = name => console.log(`Hello ${name}`);
+
+// Multiple params need ()
+const sayHello = (firstName, lastName) => console.log(`Hello ${firstName} ${lastName}`);
+
+sayHello('Pat', 'P');  
