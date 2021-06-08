@@ -1,7 +1,6 @@
 const http = new EasyHTTP;
 
 // Get Users
-const users = http.get
-http.get('hhtps://jsonplaceholder.typicode.com/uers');
-
-console.log(users);
+http.get('https://jsonplaceholder.typicode.com/uers')
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
