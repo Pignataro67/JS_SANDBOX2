@@ -13,6 +13,6 @@ const data = {
 }
 
 // Create Post
-http.get('https://jsonplaceholder.typicode.com/uers', data)
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
+// http.get('https://jsonplaceholder.typicode.com/uers', data)
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
