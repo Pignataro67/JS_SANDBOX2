@@ -36,7 +36,7 @@ class EasyHTTP {
     });
   }
 
-// Make a HTTP PUT Request
+  // Make a HTTP PUT Request
   put(url, data) {
     return new Promise((resolve, reject) => {
     fetch(url, {
@@ -48,6 +48,21 @@ class EasyHTTP {
     }) 
       .then(res => res.json())
       .then(data => resolve(data))
+      .catch(err => reject(err));
+    });
+  }
+
+  // Make a HTTP DELETE Request
+  delete(url) {
+    return new Promise((resolve, reject) => {
+    fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json'
+      }
+    }) 
+      .then(res => res.json())
+      .then(() => resolve('Resurce Deleted...'))
       .catch(err => reject(err));
     });
   }
