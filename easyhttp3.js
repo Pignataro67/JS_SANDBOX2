@@ -1,28 +1,22 @@
-const http = new EasyHTTP;
+/**   
+ * EasyHTTP Library
+ * Library for making HTTP requests
+ * 
+ * @version 2.0.0
+ * @author Pat P
+ * @license MIT
+ * 
+**/
 
-// Get Users
-http.get('https://jsonplaceholder.typicode.com/users')
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
-
-// User Data
-const data = {
-  name: 'John Doe',
-  username: 'johndoe',
-  email: 'jdoe@gmail.com'
+class EasyHTTP {
+  
+  // Make an HTTP GET Request  
+  get(url) {
+    return new Promise((resolve, reject) => {
+    fetch(url) 
+      .then(res => res.json())
+      .then(data => resolve(data))
+      .catch(err => reject(err));
+    });
+  }
 }
-
-// Create User
-http.post('https://jsonplaceholder.typicode.com/users', data)
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
-
-// Update Post
-http.put('https://jsonplaceholder.typicode.com/users/2', data)
-   .then(data => console.log(data))
-   .catch(err => console.log(err));
-
-// Delete User
-http.delete('https://jsonplaceholder.typicode.com/users/2')
-   .then(data => console.log(data))
-   .catch(err => console.log(err));
