@@ -13,7 +13,15 @@ searchUser.addEventListener('keyup', (e) => {
     // Make HTTp call
     github.getUser(userText)
       .then(data => {
-        console.log(data);
+        if(data.profile.message === 'Not Found') {
+          // Show alert
+
+        } else {
+          
+        }
       })
-  }
+    } else {
+      // CLear profile
+
+    }
 });
