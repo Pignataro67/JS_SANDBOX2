@@ -42,7 +42,16 @@ class UI {
     div.appendChild(document.createTextNode(message));
     // Get parent
     const container = document.querySelector('.searchContainer');
+    // Get search box
+    const search = document.querySelector('.search');
+    // Insert Alert
+    container.insertBefore(div, search);
   } 
+
+  // Clear alert message
+  clearAlert() {
+    const currentAlert = document.querySelector('.alert');
+  }
 
   clearProfile() {
     this.profile.innerHTML = '';
