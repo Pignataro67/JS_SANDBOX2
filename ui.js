@@ -32,6 +32,25 @@ class UI {
     `;
   }
 
+  // Show user repos
+  showRepos(repos) {
+    let output = '';
+
+    repos.forEach(function(repo) {
+      output += `
+        <div class="card card-body mb-2">
+          <div class="row">
+            <div class="col-md-6">
+              <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+            </div>
+            <div class="col-md-6">
+            
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  }
   // Show Alert
   showAlert(message, className) {
     // Clear any remaining alerts
